@@ -11,20 +11,22 @@ spec:
     name: frontend
     resources: {}
     env:
-     - name: PRODUCT_CATALOG_SERVICE_ADDR
-       value: "PRODUCT_CATALOG_SERVICE_ADDR:7001"
-     - name: CURRENCY_SERVICE_ADDR
-       value: "CURRENCY_SERVICE_ADDR:7002"
-     - name: CART_SERVICE_ADDR
-       value: "CART_SERVICE_ADDR:7003"
-     - name: RECOMMENDATION_SERVICE_ADDR
-       value: "RECOMMENDATION_SERVICE_ADDR:7004"
-     - name: CHECKOUT_SERVICE_ADDR
-       value: "CHECKOUT_SERVICE_ADDR:7005"
-     - name: SHIPPING_SERVICE_ADDR
-       value: "SHIPPING_SERVICE_ADDR:7006"
-     - name: AD_SERVICE_ADDR
-       value: "AD_SERVICE_ADDR:7007"
+      - name: PORT
+        value: "8080"
+      - name: PRODUCT_CATALOG_SERVICE_ADDR
+        value: "productcatalogservice:3550"
+      - name: CURRENCY_SERVICE_ADDR
+        value: "currencyservice:7000"
+      - name: CART_SERVICE_ADDR
+        value: "cartservice:7070"
+      - name: RECOMMENDATION_SERVICE_ADDR
+        value: "recommendationservice:8080"
+      - name: SHIPPING_SERVICE_ADDR
+        value: "shippingservice:50051"
+      - name: CHECKOUT_SERVICE_ADDR
+        value: "checkoutservice:5050"
+      - name: AD_SERVICE_ADDR
+        value: "adservice:9555"
   dnsPolicy: ClusterFirst
   restartPolicy: Never
 status: {}
