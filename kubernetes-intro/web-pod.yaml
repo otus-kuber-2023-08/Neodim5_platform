@@ -11,13 +11,6 @@ spec:
        volumeMounts:
          - name: app
            mountPath: /app
-   initContainers:
-     - name: init
-       image: busybox:1.34.0
-       command: ['sh', '-c', 'wget -O- https://tinyurl.com/otus-k8s-intro | sh']
-       volumeMounts:
-         - name: app
-           mountPath: /app
    volumes:
      - name: app
        emptyDir: {}
