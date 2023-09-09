@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: frontend
+  name: frontend
+spec:
+  containers:
+  - image: neodim5/hipster-frontend:latest
+    name: frontend
+    resources: {}
+    env:
+     - name: PRODUCT_CATALOG_SERVICE_ADDR
+       value: "PRODUCT_CATALOG_SERVICE_ADDR:7001"
+     - name: CURRENCY_SERVICE_ADDR
+       value: "CURRENCY_SERVICE_ADDR:7002"
+     - name: CART_SERVICE_ADDR
+       value: "CART_SERVICE_ADDR:7003"
+     - name: RECOMMENDATION_SERVICE_ADDR
+       value: "RECOMMENDATION_SERVICE_ADDR:7004"
+     - name: CHECKOUT_SERVICE_ADDR
+       value: "CHECKOUT_SERVICE_ADDR:7005"
+     - name: SHIPPING_SERVICE_ADDR
+       value: "SHIPPING_SERVICE_ADDR:7006"
+     - name: AD_SERVICE_ADDR
+       value: "AD_SERVICE_ADDR:7007"
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}
