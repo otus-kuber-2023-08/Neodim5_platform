@@ -12,8 +12,8 @@ Neodim5 Platform repository
 * Добавил в pod init контейнер, генерирующий страницу index.html
 * Проверил работоспособность web сервера с помощью kubectl port-forward
 * Hipster Shop frontend
-* Соберал собственный образ для frontend (используя готовый Dockerfile)
-* Поместите собранный образ на Docker Hub (neodim5/hipster-frontend)
+* Собрал собственный образ для frontend (используя готовый Dockerfile)
+* Поместил собранный образ на Docker Hub (neodim5/hipster-frontend)
 * Попробовал использовать ad-hoc режим и возможности Kubectl для создания ресурсов
 * Выяснил причину, по которой pod frontend находится в статусе Error. Описание в PR.
 * Разобраны декларативный и императивный подходы
