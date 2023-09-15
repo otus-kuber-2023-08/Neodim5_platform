@@ -50,6 +50,8 @@ spec:
           mountPropagation: HostToContainer
           name: root
           readOnly: true
+      tolerations:
+      - operator: Exists
       volumes:
       - hostPath:
           path: /sys
