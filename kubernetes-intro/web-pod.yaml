@@ -7,7 +7,7 @@ metadata:
 spec:
    containers:
      - name: web
-       image: neodim5/kube-intro:latest
+       image: neodim5/kube-intro:v0.0.1
        volumeMounts:
          - name: app
            mountPath: /app
