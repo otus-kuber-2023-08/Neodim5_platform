@@ -27,6 +27,8 @@ spec:
         value: "checkoutservice:5050"
       - name: AD_SERVICE_ADDR
         value: "adservice:9555"
+      - name: ENABLE_PROFILER
+        value: "0"
   dnsPolicy: ClusterFirst
   restartPolicy: Never
 status: {}
