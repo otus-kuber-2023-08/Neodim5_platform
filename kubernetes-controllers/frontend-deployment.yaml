@@ -45,4 +45,4 @@ spec:
             - name: AD_SERVICE_ADDR
               value: "adservice:9555"
             - name: ENABLE_PROFILER
-              value: "0
+              value: "0"
