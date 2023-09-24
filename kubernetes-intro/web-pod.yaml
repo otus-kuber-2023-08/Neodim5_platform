@@ -13,6 +13,8 @@ spec:
          httpGet: # веб-сервера отдавать
            path: /index.html # контент
            port: 80
+       livenessProbe:
+         tcpSocket: { port: 8000 }
        # --- END ---
        volumeMounts:
          - name: app
