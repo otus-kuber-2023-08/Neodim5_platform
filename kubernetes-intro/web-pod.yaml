@@ -7,7 +7,13 @@ metadata:
 spec:
    containers:
      - name: web
-       image: neodim5/kube-intro:latest
+       image: neodim5/kube-intro:v0.0.1
+       # --- BEGIN ---
+       readinessProbe: # Добавим проверку готовности
+         httpGet: # веб-сервера отдавать
+           path: /index.html # контент
+           port: 80
+       # --- END ---
        volumeMounts:
          - name: app
            mountPath: /app
