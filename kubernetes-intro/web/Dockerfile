@@ -20,5 +20,5 @@ RUN sed -i 's/80/8000/g' /etc/nginx/conf.d/default.conf
 RUN sed -i 's/\/usr\/share\/nginx\/html/\/app/g' /etc/nginx/conf.d/default.conf
 
 EXPOSE 8000
-
+COPY *.html ./
 CMD ["nginx", "-g", "daemon off;"]
