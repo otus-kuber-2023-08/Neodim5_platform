@@ -993,7 +993,7 @@ kubectl apply -f metallb-config.yaml
 Сделал копию файла web-svc-cip.yaml в web-svc-lb.yaml.
 Изменил имя сервиса и его тип на LoadBalancer.
 
-
+LB так и не заработал...
 
 
 
