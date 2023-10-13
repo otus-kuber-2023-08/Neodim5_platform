@@ -31,7 +31,7 @@ livenessProbe:
  tcpSocket: { port: 8000 }
 ```
 
-##Вопрос для самопроверки:
+## Вопрос для самопроверки:
 
 + Почему следующая конфигурация валидна, но не имеет смысла?
 ```
@@ -47,7 +47,7 @@ livenessProbe:
 + Бывают ли ситуации, когда она все-таки имеет смысл?
 Возможно, когда требуется проверка работы или проверки доступа до самого POD, без доступа к нему из вне.
 
-##Создание Deployment
+## Создание Deployment
 
 Создал Deployment, который упростит обновление конфигурации пода и управление группами подов.
 kubernetes-networks/web-deploy.yaml
@@ -110,15 +110,19 @@ ROLLOUT STATUS:
       type: RollingUpdate
       rollingUpdate:
         maxUnavailable: 100%
-        maxSurge: 0  
+        maxSurge: 0
    ```
+
    ```
    neodim@otus:~/Neodim5_platform/kubernetes-networks$ k apply -f web-deploy.yaml
-The Deployment "web" is invalid: spec.strategy.rollingUpdate.maxUnavailable: Invalid value: intstr.IntOrString{Type:0, IntVal:0, StrVal:""}: may not be 0 when `maxSurge` is 0
+   The Deployment "web" is invalid: spec.strategy.rollingUpdate.maxUnavailable: Invalid value: intstr.IntOrString{Type:0, IntVal:0, StrVal:""}: may not be 0 when `maxSurge` is 0
    ```
+
 оба значения не могут быть одновременно равны 0
 
   + maxUnavailable 100% maxSurge 0
+
+
     ```
     strategy:
       type: RollingUpdate
@@ -126,18 +130,23 @@ The Deployment "web" is invalid: spec.strategy.rollingUpdate.maxUnavailable: Inv
         maxUnavailable: 100%
         maxSurge: 0
     ```
+
   удаление всех 3-х старых подов и затем создание трех новых
-  
+
+
   + Оба 100%
-  ```
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 100%
-      maxSurge: 100%
-  ```
-  Одновременное удаление 3-х старых и создание 3-х новых подов
-  
-  
+
+
+   ```
+   strategy:
+     type: RollingUpdate
+     rollingUpdate:
+       maxUnavailable: 100%
+       maxSurge: 100%
+   ```
+
+   Одновременное удаление 3-х старых и создание 3-х новых подов
+
+
 ## Создание Service
 
