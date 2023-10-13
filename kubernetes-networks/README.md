@@ -346,7 +346,8 @@ fe00::2 ip6-allrouters
 
 
 + Сделал iptables --list -nv -t nat
-  ```
+
+```
 root@minikube:~# iptables --list -nv -t nat
 Chain PREROUTING (policy ACCEPT 7 packets, 420 bytes)
  pkts bytes target     prot opt in     out     source               destination
