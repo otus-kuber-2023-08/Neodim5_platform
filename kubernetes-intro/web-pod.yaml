@@ -8,14 +8,12 @@ spec:
    containers:
      - name: web
        image: neodim5/kube-intro:v0.0.1
-       # --- BEGIN ---
-       readinessProbe: # Добавим проверку готовности
-         httpGet: # веб-сервера отдавать
-           path: /index.html # контент
+       readinessProbe:
+         httpGet:
+           path: /index.html
            port: 80
        livenessProbe:
          tcpSocket: { port: 8000 }
-       # --- END ---
        volumeMounts:
          - name: app
            mountPath: /app

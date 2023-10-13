@@ -1,0 +1,3 @@
+kubernetes-intro/web/.dockerignore
+kubernetes-intro/web/package*
+kubernetes-intro/web/server.json
